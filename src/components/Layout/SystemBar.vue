@@ -1,5 +1,6 @@
 <template>
   <div class="system-bar">
+    <button @click="$emit('openDevTools')">F12</button>
     <div class="d-flex app-actions">
       <button class="btn minimize" @click="$emit('minimize')">
         <img alt="minus" src="@/assets/minus.svg" />
@@ -22,30 +23,38 @@ export default {};
 </script>
 <style scoped>
 .system-bar {
-  background: white;
+  background: transparent;
   position: absolute;
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
+  -webkit-app-region: drag;
 }
 .app-actions {
   float: right;
+  -webkit-app-region: no-drag;
 }
 .btn {
   background: transparent;
   border: 0;
 }
 .btn:hover {
-  background: rgba(200, 200, 200, 0.3);
+  background: rgba(100, 100, 100, 0.3);
+}
+.btn > img {
+  width: 15px;
+}
+.btn {
+  width: 36px;
+}
+.close > svg {
+  width: 15px;
 }
 .close:hover {
-  background: red;
+  background: #c12a31;
 }
 .resize > img {
-  width: 18px;
-}
-.resize {
-  width: 36px;
+  width: 14px;
 }
 .close > svg > path {
   fill: #bfbfbf;

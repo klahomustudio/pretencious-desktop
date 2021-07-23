@@ -29,6 +29,14 @@ async function createWindow() {
     console.log('close')
     win.destroy()
   })
+  ipcMain.on('minimizeApp', () => {
+    console.log('minimize')
+    win.minimize()
+  })
+  ipcMain.on('resizeApp', () => {
+    console.log('resize')
+    win.fullScreen = !win.fullScreen
+  })
   ipcMain.on('openDevTools', () => {
     win.webContents.openDevTools();
   })

@@ -1,7 +1,11 @@
 <template>
-  <system-bar />
+  <system-bar
+    @close="closeApp"
+    @minimize="minimize"
+    @resize="resize"
+    @openDevTools="openDevTools"
+  />
   <div class="app">
-    <button @click="openDevTools">F12</button>
     <router-view></router-view>
   </div>
 </template>
@@ -35,6 +39,6 @@ export default {
   /* make this responsive */
   max-height: 90vh;
   padding-top: 30px;
-  overflow: auto
+  overflow: auto;
 }
 </style>

@@ -1,6 +1,29 @@
 body {
   padding: 0px !important;
   margin: 0px !important;
+  background-color: #010101;
+  user-select: none; /* Standard */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  left: 0
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #222;
 }
 
 .d-flex {
