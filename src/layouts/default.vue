@@ -6,16 +6,19 @@
     @openDevTools="openDevTools"
   />
   <div class="app">
+    <nav-bar />
     <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import SystemBar from "@/components/Layout/SystemBar.vue";
+import NavBar from "@/components/Layout/NavBar.vue";
 import { ipcRenderer } from "electron";
 export default {
   components: {
     SystemBar,
+    NavBar,
   },
   methods: {
     closeApp(): void {

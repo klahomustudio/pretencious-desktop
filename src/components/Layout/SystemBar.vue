@@ -1,6 +1,6 @@
 <template>
   <div class="system-bar">
-    <button @click="$emit('openDevTools')">F12</button>
+    <button class="btn" @click="$emit('openDevTools')">DevTools</button>
     <div class="d-flex app-actions">
       <button class="btn minimize" @click="$emit('minimize')">
         <img alt="minus" src="@/assets/minus.svg" />
@@ -32,11 +32,11 @@ export default {};
 }
 .app-actions {
   float: right;
-  -webkit-app-region: no-drag;
 }
 .btn {
   background: transparent;
   border: 0;
+  -webkit-app-region: no-drag;
 }
 .btn:hover {
   background: rgba(100, 100, 100, 0.3);
