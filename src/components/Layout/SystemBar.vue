@@ -36,6 +36,7 @@ export default {};
 .btn {
   background: transparent;
   border: 0;
+  transition: 0.2s;
   -webkit-app-region: no-drag;
 }
 .btn:hover {

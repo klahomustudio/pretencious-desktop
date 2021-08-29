@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/home.vue";
+import Home from "@/views/home.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,16 +14,16 @@ const routes: Array<RouteRecordRaw> = [
       import( "../views/dashboard.vue"),
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/controlpanel",
+    name: "ControlPanel",
     component: () =>
-      import( "../views/dashboard.vue"),
+      import( "../views/controlPanel.vue"),
   },
   {
-    path: "/todo",
-    name: "TODO",
+    path: "/login",
+    name: "Login",
     component: () =>
-      import( "../views/todo.vue"),
+      import( "../views/login.vue"),
   },
 ];
 

@@ -6,8 +6,10 @@
     @openDevTools="openDevTools"
   />
   <div class="app">
-    <nav-bar />
-    <router-view></router-view>
+    <nav-bar v-if="show" />
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -15,10 +17,21 @@
 import SystemBar from "@/components/Layout/SystemBar.vue";
 import NavBar from "@/components/Layout/NavBar.vue";
 import { ipcRenderer } from "electron";
-export default {
+import { defineComponent } from "@vue/runtime-core";
+
+export default defineComponent({
   components: {
     SystemBar,
     NavBar,
+  },
+  computed: {
+    show() {
+      const currentRoute = this.$router.currentRoute.value.name;
+      if (currentRoute === "Login") {
+        return false;
+      }
+      return true;
+    },
   },
   methods: {
     closeApp(): void {
@@ -34,7 +47,7 @@ export default {
       ipcRenderer.send("openDevTools");
     },
   },
-};
+});
 </script>
 
 <style scoped>
@@ -43,5 +56,11 @@ export default {
   max-height: 90vh;
   padding-top: 30px;
   overflow: auto;
+}
+.content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80vw;
 }
 </style>

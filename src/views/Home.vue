@@ -3,8 +3,6 @@
 </template>
 
 <script lang="ts">
-import { ipcRenderer } from "electron";
-
 export default {
   methods: {},
 };
